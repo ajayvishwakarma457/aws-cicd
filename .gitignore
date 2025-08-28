@@ -4,3 +4,6 @@ node_modules/
 npm-debug.log*
 .DS_Store
 package-lock.json
+
+# AWS EC2 key file
+spak-prod-ap-south-1-ec2-key.pem
