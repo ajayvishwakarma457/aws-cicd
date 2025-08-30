@@ -1,9 +1,26 @@
 # Node.js
 node_modules/
-.env
-npm-debug.log*
-.DS_Store
-package-lock.json
 
-# AWS EC2 key file
-spak-prod-ap-south-1-ec2-key.pem
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+
+# Optional
+coverage/
+
+# VS Code
+.vscode/
