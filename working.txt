@@ -7,3 +7,5 @@ EC2 Instance Details:
 5) Public IPv4 DNS: ec2-3-110-85-186.ap-south-1.compute.amazonaws.com
 6) Public IPv4 Address: 3.110.85.186
 7) Platform Details: Linux/UNIX
+
+
