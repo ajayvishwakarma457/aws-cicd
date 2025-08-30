@@ -1,0 +1,9 @@
+EC2 Instance Details:
+
+1) Instance ID: i-05f8528cd5258eedc
+2) Instance State: running
+3) Instance Type: t2.micro
+4) Availability Zone: ap-south-1a
+5) Public IPv4 DNS: ec2-3-110-85-186.ap-south-1.compute.amazonaws.com
+6) Public IPv4 Address: 3.110.85.186
+7) Platform Details: Linux/UNIX

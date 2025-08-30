@@ -1,0 +1,19 @@
+
+
+## SSH Login to AWS EC2 Instance
+
+To log in to your AWS EC2 instance using SSH, follow these steps:
+
+1. Open your terminal in the project root directory.
+2. Make sure your PEM file (`spak-prod-ap-south-1-ec2-key.pem`) has secure permissions:
+	```sh
+	chmod 400 spak-prod-ap-south-1-ec2-key.pem
+	```
+3. Use the following command to connect:
+	```sh
+	ssh -i "spak-prod-ap-south-1-ec2-key.pem" ubuntu@ec2-3-110-85-186.ap-south-1.compute.amazonaws.com
+	```
+
+Replace `ubuntu` with the correct username if your instance uses a different OS (e.g., `ec2-user` for Amazon Linux).
+
+
