@@ -1,0 +1,49 @@
+# GitHub Actions CI/CD Setup for EC2 Deployment
+
+## 1. Add EC2 Details as GitHub Secrets
+
+Go to your repository on GitHub:
+- Navigate to **Settings > Secrets and variables > Actions**.
+- Click **New repository secret** and add the following:
+  - `EC2_HOST`: Your EC2 public DNS (e.g., ec2-3-110-85-186.ap-south-1.compute.amazonaws.com)
+  - `EC2_USER`: The SSH username (usually `ubuntu` for Ubuntu, `ec2-user` for Amazon Linux)
+  - `EC2_SSH_KEY`: The content of your private SSH key (e.g., `spak-prod-ap-south-1-ec2-key.pem`)
+
+## 2. Create a GitHub Actions Workflow
+
+Add the following file to `.github/workflows/deploy.yml` in your repository:
+
+```yaml
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Copy SSH key
+        run: |
+          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
+          chmod 600 key.pem
+
+      - name: Deploy via SSH
+        run: |
+          ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "
+            cd /var/www/html &&
+            git pull origin main &&
+            npm install &&
+            pm2 restart all || pm2 start index.js
+          "
+```
+
+## 3. Notes
+- Make sure your EC2 instance has your public SSH key in `~/.ssh/authorized_keys`.
+- Your app will auto-deploy on every push to the `main` branch.
+- Use PM2 for process management and auto-restart.
