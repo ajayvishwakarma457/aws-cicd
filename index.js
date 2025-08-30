@@ -26,6 +26,10 @@ app.get('/service', (req, res) => {
   res.send('Our services include web development, cloud solutions, and more.');
 });
 
+app.get('/gallery', (req, res) => {
+  res.send('Contact us at gallery');
+});
+
 app.get('/contact', (req, res) => {
   res.send('Contact us at contact@example.com');
 });
