@@ -34,6 +34,10 @@ app.get('/ajay', (req, res) => {
   res.send('Contact us at ajay');
 });
 
+app.get('/sujeet', (req, res) => {
+  res.send('Contact us at sujeet');
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
