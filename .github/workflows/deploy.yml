@@ -23,6 +23,5 @@ jobs:
             cd /var/www/html/aws-cicd &&
             git pull origin main &&
             npm install &&
-            # pm2 restart all || npm start
-            pm2 restart index || pm2 start index.js --name "pm2-aws"
+            pm2 start index.js --name pm2-aws -f
           "
