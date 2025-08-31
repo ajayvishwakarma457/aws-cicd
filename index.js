@@ -30,9 +30,9 @@ app.get('/gallery', (req, res) => {
   res.send('Contact us at gallery');
 });
 
-// app.get('/contact', (req, res) => {
-//   res.send('Contact us at contact@example.com');
-// });
+app.get('/contact', (req, res) => {
+  res.send('Contact us at contact@example.com');
+});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
