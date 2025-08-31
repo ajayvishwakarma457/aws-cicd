@@ -1,0 +1,17 @@
+name: Preview
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Start preview server
+        run: npm run preview
