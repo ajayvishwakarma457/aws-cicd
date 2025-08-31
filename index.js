@@ -34,6 +34,10 @@ app.get('/contact', (req, res) => {
   res.send('Contact us at contact@example.com');
 });
 
+app.get('/manish', (req, res) => {
+  res.send('Contact us at manish');
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
