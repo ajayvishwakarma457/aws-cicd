@@ -30,8 +30,8 @@ app.get('/gallery', (req, res) => {
   res.send('Contact us at gallery');
 });
 
-app.get('/manish', (req, res) => {
-  res.send('Contact us at manish');
+app.get('/ajay', (req, res) => {
+  res.send('Contact us at ajay');
 });
 
 app.listen(port, () => {
