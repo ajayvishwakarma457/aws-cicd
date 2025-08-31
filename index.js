@@ -17,9 +17,9 @@ app.get('/about', (req, res) => {
   res.send('About us page.');
 });
 
-// app.get('/products', (req, res) => {
-//   res.json({ products: ['Product 1', 'Product 2', 'Product 3'] });
-// });
+app.get('/products', (req, res) => {
+  res.json({ products: ['Product 1', 'Product 2', 'Product 3'] });
+});
 
 
 // app.get('/service', (req, res) => {
